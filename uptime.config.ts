@@ -4,44 +4,43 @@ const pageConfig = {
   // Links shown at the header of your status page, could set `highlight` to `true`
   links: [
     { link: 'https://squad.icu/', label: '官网' },
-    { link: 'https://qm.qq.com/q/GIBVo8WPOA', label: 'Q群' },
+    { link: 'https://qm.qq.com/q/GIBVo8WPOA', label: 'QQ群' },
     { link: 'mailto:madlifer@live.com', label: '邮件联系我', highlight: true },
   ],
 }
 const workerConfig = {
   kvWriteCooldownMinutes: 3,
-  passwordProtection: 'username:password',
   monitors: [
     {
       id: 'website',
       name: 'Squad.ICU | 官网',
       method: 'GET',
-      target: 'https://sqaud.icu',
+      target: 'https://squad.icu',
       tooltip: 'This is a tooltip for this monitor',
     },
     {
       id: 'website',
       name: 'Squad.ICU |文件下载服务',
       method: 'GET',
-      target: 'https://file.sqaud.icu',
+      target: 'https://file.squad.icu',
     },
     {
       id: 'porxy-cap-guess',
       name: 'Squad.ICU | RAAS猜点反代',
       method: 'GET',
-      target: 'https://mortar.sqaud.icu',
+      target: 'https://mortar.squad.icu',
     },
     {
       id: 'mortar',
       name: 'Squad.ICU | 迫击炮计算器',
       method: 'GET',
-      target: 'https://mortar.sqaud.icu',
+      target: 'https://mortar.squad.icu',
     },
     {
       id: 'test-server-1',
       name: 'Squad.ICU | ①号测试服务器',
       method: 'TCP_PING',
-      target: '110.40.78.38:271165',
+      target: '110.40.78.38:27165',
     },
   ],
   callbacks: {
