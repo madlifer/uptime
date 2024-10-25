@@ -1,11 +1,11 @@
 const pageConfig = {
   // Title for your status page
-  title: "lyc8503's Status Page",
+  title: "Squad.ICU 服务运行状态",
   // Links shown at the header of your status page, could set `highlight` to `true`
   links: [
-    { link: 'https://github.com/lyc8503', label: 'GitHub' },
-    { link: 'https://blog.lyc8503.net/', label: 'Blog' },
-    { link: 'mailto:me@lyc8503.net', label: 'Email Me', highlight: true },
+    { link: 'https://squad.icu/', label: '官网' },
+    { link: 'https://qm.qq.com/q/GIBVo8WPOA', label: 'Q群' },
+    { link: 'mailto:madlifer@live.com', label: '邮件联系我', highlight: true },
   ],
 }
 
@@ -16,48 +16,36 @@ const workerConfig = {
   // passwordProtection: 'username:password',
   // Define all your monitors here
   monitors: [
-    // Example HTTP Monitor
     {
-      // `id` should be unique, history will be kept if the `id` remains constant
-      id: 'foo_monitor',
-      // `name` is used at status page and callback message
-      name: 'My API Monitor',
-      // `method` should be a valid HTTP Method
-      method: 'POST',
-      // `target` is a valid URL
-      target: 'https://example.com',
-      // [OPTIONAL] `tooltip` is ONLY used at status page to show a tooltip
+      id: 'website',
+      name: 'Squad.ICU | 官网',
+      method: 'GET',
+      target: 'https://sqaud.icu',
       tooltip: 'This is a tooltip for this monitor',
-      // [OPTIONAL] `statusPageLink` is ONLY used for clickable link at status page
-      statusPageLink: 'https://example.com',
-      // [OPTIONAL] `expectedCodes` is an array of acceptable HTTP response codes, if not specified, default to 2xx
-      expectedCodes: [200],
-      // [OPTIONAL] `timeout` in millisecond, if not specified, default to 10000
-      timeout: 10000,
-      // [OPTIONAL] headers to be sent
-      headers: {
-        'User-Agent': 'Uptimeflare',
-        Authorization: 'Bearer YOUR_TOKEN_HERE',
-      },
-      // [OPTIONAL] body to be sent
-      body: 'Hello, world!',
-      // [OPTIONAL] if specified, the response must contains the keyword to be considered as operational.
-      responseKeyword: 'success',
-      // [OPTIONAL] if specified, the check will run in your specified region,
-      // refer to docs https://github.com/lyc8503/UptimeFlare/wiki/Geo-specific-checks-setup before setting this value
-      checkLocationWorkerRoute: 'https://xxx.example.com',
     },
-    // Example TCP Monitor
     {
-      id: 'test_tcp_monitor',
-      name: 'Example TCP Monitor',
-      // `method` should be `TCP_PING` for tcp monitors
+      id: 'website',
+      name: 'Squad.ICU |文件下载服务',
+      method: 'GET',
+      target: 'https://file.sqaud.icu',
+    },
+    {
+      id: 'porxy-cap-guess',
+      name: 'Squad.ICU | RAAS猜点反代',
+      method: 'GET',
+      target: 'https://mortar.sqaud.icu',
+    },
+    {
+      id: 'mortar',
+      name: 'Squad.ICU | 迫击炮计算器',
+      method: 'GET',
+      target: 'https://mortar.sqaud.icu',
+    },
+    {
+      id: 'test-server-1',
+      name: 'Squad.ICU | ①号测试服务器',
       method: 'TCP_PING',
-      // `target` should be `host:port` for tcp monitors
-      target: '1.2.3.4:22',
-      tooltip: 'My production server SSH',
-      statusPageLink: 'https://example.com',
-      timeout: 5000,
+      target: '110.40.78.38:271165',
     },
   ],
   notification: {
